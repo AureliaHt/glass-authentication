@@ -1,0 +1,180 @@
+.tasksManagerContainer {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    height: 70vh;
+    background: #ffffff;
+    background-color: rgba(200, 200, 200, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    color: papayawhip;
+}
+
+.managerSidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+    border-right: 0.5px solid #b1b1b1c4;
+}
+
+.managerListTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 100%;
+    background: #000000;
+    background-color: rgba(200, 200, 200, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 15px;
+    backdrop-filter: blur(15px);
+    font-size: 3.25rem;
+    letter-spacing: 2px;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+.listsManagement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.listsManagement-item {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+
+.listsManagement a.is-active {
+    background: #000000;
+    background-color: rgba(252, 248, 16, 0.2);
+    border: 0.5px solid rgba(255, 199, 44, 0.767);
+}
+
+.listsManagement-item:hover {
+    background: #000000;
+    background-color: rgba(253, 252, 159, 0.2);
+    box-shadow: 7px 7px 12px rgba(255, 199, 44, 0.767);
+    cursor: pointer;
+}
+
+.tasksManager {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+}
+
+.managerTaskTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 100%;
+    background: #000000;
+    background-color: rgba(200, 200, 200, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-right-radius: 15px;
+    backdrop-filter: blur(15px);
+    font-size: 3.25rem;
+    letter-spacing: 2px;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+.tasksManagement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tasksManagement .task {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    border-radius: 15px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #000000;
+    background-color: rgba(253, 252, 159, 0.2);
+}
+
+.tasksManagement .task:hover {
+    box-shadow: 7px 7px 12px rgba(255, 199, 44, 0.767);
+    cursor: pointer;
+}
+
+.tasksManagement .task:active {
+    transform: scale(1.09);
+}
+
+.tasksManagement p.taskComplete {
+    text-decoration: line-through;
+}
+ 
+.managementListsButton{
+    display: flex;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.addListButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    padding: 1rem 0;
+    font-family: 'Lato', sans-serif;
+    color: papayawhip;
+    font-size: 1rem;
+    background: #000000;
+    background-color: rgba(200, 200, 200, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 850px) {
+    .tasksManagerContainer {
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        width: 100vw;
+    }
+
+    .managerSidebar {
+        width: 100%;
+        border-right: transparent;
+    }
+
+    .managerListTitle {
+        border-top-right-radius: 15px;
+        font-size: 1.4rem;
+    }
+
+    .tasksManager {
+        width: 100%;
+    }
+
+    .managerTaskTitle {
+        border-top-right-radius: 0px;
+        font-size: 1.4rem;
+    }
+
+    .addListButton {
+        font-size: 0.8rem;
+    }
+}
