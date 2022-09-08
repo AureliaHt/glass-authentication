@@ -20,7 +20,7 @@ app.use(cors({
 
 /* purpose : get all the lists in the database */
 app.get('/lists', (req, res) => {
-    List.find({}).then((lists:string[]) => {
+    List.find({}).then((lists:string) => {
         res.send(lists);
     })
 });
@@ -28,16 +28,77 @@ app.get('/lists', (req, res) => {
 /* purpose : create a new list with an id */
 app.post('/lists', (req, res) => {
     let title = req.body.title;
+
+    let newList = new List({
+        title
+    });
+    newList.save().then((listDoc:string) => {
+        res.send(listDoc);
+    })
 });
 
 /* purpose: update a specified list */
 app.patch('/lists/:id', (req,res) => {
-
+    List.findOneAndUpdate({ _id: req.params.id }, {
+        $set: req.body
+    }).then(() => {
+        res.sendStatus(200);
+    });
 });
 
 /* purpose: delete a specified list*/
-app.delete('/lists:id', (req, res) => {
+app.delete('/lists/:id', (req, res) => {
+    List.findOneAndRemove({ 
+        _id: req.params.id
+    }).then((removedListDoc:any) => {
+        res.send(removedListDoc);
+    })
+});
 
+/* purpose: getting all the tasks from a specified list */
+app.get('lists/:listId/tasks', (req,res) => {
+    Task.find({
+        _listId: req.params.listId
+    }).then((tasks:string) => {
+        res.send(tasks);
+    })
+});
+app.get('/lists/:listId/tasks/:id', (req,res) => {
+    Task.findOne({
+        _listId: req.params.listId,
+        _id: req.params.id
+    }).then((task:string) => {
+        res.send(task);
+    })
+});
+
+/* purpose: creating a new task in a specific list */
+app.post('/lists/:listId/tasks', (req,res) => {
+    let newTask = new Task({
+        title: req.body.title,
+        _listId: req.params.listId
+    });
+    newTask.save().then((newTaskDoc:string) => {
+        res.send(newTaskDoc);
+    })
+});
+
+/* purpose: updating a specific task in a specified list */
+app.patch('/lists/:listId/tasks/:id', (req,res) => {
+    Task.findOneAndUpdate({ _id: req.params.id}, {
+        $set: req.body
+    }).then(() => {
+        res.sendStatus(200);
+    })
+});
+
+/* purpose: deleting a specific task in a specified list */
+app.delete('/lists/:listId/tasks/:id', (req,res) => {
+    Task.findOneAndRemove({
+        _id: req.params.id
+    }).then((removeTaskDoc:string) => {
+        res.send(removeTaskDoc);
+    })
 });
 
 const connectionUrl = ('mongodb+srv://' + process.env.DB_USER_PASS + '@cluster0.bru98.mongodb.net/Task-Manager');
