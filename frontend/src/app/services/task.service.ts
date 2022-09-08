@@ -9,7 +9,7 @@ export class TaskService {
   constructor( private webRequestService: WebRequestService) { }
 
   /* purpose: sending a web request to create a new list */
-  createList() {
-    this.webRequestService.post('./list', { title:String });
+  createList(title:string) {
+    return this.webRequestService.post('lists', { title });
   }
 }
