@@ -7,17 +7,13 @@
             <a class="listsManagement-item is-active">
                 <p>Liste 1 - test</p>
             </a>
-            <a class="listsManagement-item">
-                <p>Liste 2 - test</p>
-            </a>
-            <a class="listsManagement-item">
-                <p>Liste 3 - test</p>
+            <a class="listsManagement-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]">
+                <p>{{ list.title }}</p>
             </a>
         </div>
-        <div class="managementListsButton">
-            <button class="addListButton" (click)="createNewList()"> + Nouvelle Liste</button>
-        </div>
+        <button routerLink="/new-list" > Nouvelle Liste</button>
     </div>
+
     <div class="tasksManager">
         <div class="managerTaskTitle">
             <h2>Todo</h2>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
@@ -8,14 +9,20 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class TasksManagerComponent implements OnInit {
 
-  constructor(private taskService: TaskService) { }
+  lists: any;
+
+  constructor(private taskService: TaskService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
 
-  createNewList() {
-    this.taskService.createList('testing add button again').subscribe((res: any) => {
-      console.log(res);
-    });
+    this.route.params.subscribe(
+      (params: Params) => {
+        console.log(params);
+      }
+    )
+
+    this.taskService.getLists().subscribe((lists: any) => {
+      this.lists = lists;
+    })
   }
 }

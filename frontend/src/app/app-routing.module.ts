@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TasksManagerComponent } from './pages/tasks-manager/tasks-manager.component';
 
 const routes: Routes = [
-  { path: '', component: TasksManagerComponent}
+  { path: '', redirectTo: 'lists', pathMatch: 'full'},
+  { path: 'lists', component: TasksManagerComponent}
 ];
 
 @NgModule({

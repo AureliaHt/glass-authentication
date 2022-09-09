@@ -123,18 +123,14 @@
 .tasksManagement p.taskComplete {
     text-decoration: line-through;
 }
- 
-.managementListsButton{
-    display: flex;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-}
 
-.addListButton {
+button {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 30%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
     padding: 1rem 0;
     font-family: 'Lato', sans-serif;
     color: papayawhip;
@@ -144,6 +140,11 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(15px);
+}
+
+button:hover {
+    transform: scale(1.09);
+    box-shadow: 7px 7px 12px rgba(255, 199, 44, 0.767);
     cursor: pointer;
 }
 
@@ -174,7 +175,7 @@
         font-size: 1.4rem;
     }
 
-    .addListButton {
+    .managementListsButton a {
         font-size: 0.8rem;
     }
 }

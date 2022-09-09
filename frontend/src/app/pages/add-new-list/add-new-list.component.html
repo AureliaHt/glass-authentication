@@ -1,0 +1,10 @@
+<div class="newListContainer">
+    <div class="newListHeader">
+        <h2>Ajouter une nouvelle liste</h2>
+    </div>
+    <div class="addNewList">
+        <input #newTitleListInput type="text" placeholder="Quelle liste voulez-vous ajouter ?">
+        <button (click)="createList(newTitleListInput.value)">Ajouter</button>
+    </div>
+    <button class="cancelButton" routerLink="/lists">Annuler</button>
+</div>
