@@ -11,7 +11,7 @@
                 <p>{{ list.title }}</p>
             </a>
         </div>
-        <button routerLink="/new-list" > Nouvelle Liste</button>
+        <button class="addListButton" routerLink="/new-list" > Nouvelle Liste</button>
     </div>
 
     <div class="tasksManager">
@@ -20,7 +20,7 @@
         </div>
         <div class="tasksManagement">
             <p class="task" *ngFor="let task of tasks">{{ task.title }}</p>
-
         </div>
+        <button class="addTaskButton" routerLink="/new-task"> Nouvelle tâche</button>
     </div>
 </section>

@@ -18,8 +18,13 @@ export class TaskService {
     return this.webRequestService.get('lists');
   }
 
+  /* purpose: create a new task inside a specific list, post method */
+  createTask(title: string) {
+    return this.webRequestService.post('tasks', { title });
+  }
+
   /* purpose: get(read) the tasks corresponding to a specific list */
-  getTasks(_listId: string) {
-    return this.webRequestService.get(`lists/$(listId)/tasks`);
+  getAllTasks(listId: string) {
+    return this.webRequestService.get(`lists/${listId}`);
   }
 }

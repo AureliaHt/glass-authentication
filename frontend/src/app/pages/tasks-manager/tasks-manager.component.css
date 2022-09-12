@@ -67,6 +67,30 @@
     cursor: pointer;
 }
 
+.addListButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    font-family: 'Lato', sans-serif;
+    color: papayawhip;
+    font-size: 1rem;
+    background: #000000;
+    background-color: rgba(200, 200, 200, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+}
+
+.addListButton:hover {
+    transform: scale(1.09);
+    box-shadow: 7px 7px 12px rgba(255, 199, 44, 0.767);
+    cursor: pointer;
+}
+
 .tasksManager {
     display: flex;
     flex-direction: column;
@@ -98,6 +122,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
 }
 
 .tasksManagement .task {
@@ -124,11 +149,11 @@
     text-decoration: line-through;
 }
 
-button {
+.addTaskButton{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 22%;
     margin-left: 1rem;
     margin-bottom: 1rem;
     padding: 1rem 0;
@@ -142,7 +167,7 @@ button {
     backdrop-filter: blur(15px);
 }
 
-button:hover {
+.addTaskButton:hover {
     transform: scale(1.09);
     box-shadow: 7px 7px 12px rgba(255, 199, 44, 0.767);
     cursor: pointer;

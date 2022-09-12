@@ -1,0 +1,10 @@
+<div class="newTaskContainer">
+    <div class="newTaskHeader">
+        <h2>Ajouter une nouvelle tâche</h2>
+    </div>
+    <div class="addNewTask">
+        <input #newTitleTaskInput type="text" placeholder="Quelle tâche voulez-vous ajouter ?">
+        <button (click)="createTask(newTitleTaskInput.value)">Ajouter</button>
+    </div>
+    <button class="cancelButton" routerLink="/lists">Annuler</button>
+</div>
