@@ -13,9 +13,9 @@ import { AddNewTaskComponent } from './add-new-task/add-new-task.component';
 const tasksManagerRoutes: Routes = [
   { path: '', redirectTo: '/lists', pathMatch: 'full'},
   { path: 'new-list', component: AddNewListComponent},
-  { path: 'new-task', component: AddNewTaskComponent},
   { path: 'lists', component: TasksManagerComponent},
-  { path: 'lists/:listId', component: TasksManagerComponent}
+  { path: 'lists/:listId', component: TasksManagerComponent},
+  { path: 'lists/:listId/new-task', component: AddNewTaskComponent}
 ]
 
 @NgModule({

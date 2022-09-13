@@ -19,8 +19,8 @@ export class TaskService {
   }
 
   /* purpose: create a new task inside a specific list, post method */
-  createTask(title: string) {
-    return this.webRequestService.post('tasks', { title });
+  createTask(title: string, listId: string) {
+    return this.webRequestService.post(`lists/${listId}/tasks`, { title });
   }
 
   /* purpose: get(read) the tasks corresponding to a specific list */

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Params } from '@angular/router';
-import { combineLatestWith } from 'rxjs';
+import { ActivatedRoute, Params } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
