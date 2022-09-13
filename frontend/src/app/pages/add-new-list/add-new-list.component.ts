@@ -17,8 +17,8 @@ export class AddNewListComponent implements OnInit {
   createList(title:string) {
     this.taskService.createList(title).subscribe((res:any) => {
       console.log(res);
-
-      this.router.navigate([ '/lists', res._id ]);
+      /* purpose: redirect the user when adding a new list and modify the route with the id of the new list */
+      this.router.navigate(['/lists', res._id]);
     });
   }
 }

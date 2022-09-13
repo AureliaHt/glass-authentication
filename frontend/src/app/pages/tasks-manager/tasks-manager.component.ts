@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Data, Params } from '@angular/router';
+import { combineLatestWith } from 'rxjs';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
@@ -19,9 +20,6 @@ export class TasksManagerComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         console.log(params);
-        this.taskService.getAllTasks(params['listId']).subscribe((tasks: any) => {
-          this.tasks = tasks;
-      })
       }
     )
 
